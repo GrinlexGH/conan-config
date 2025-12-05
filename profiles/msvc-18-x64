@@ -14,7 +14,7 @@ compiler.runtime_type=Release
 compiler.version=195
 
 [options]
-*:shared=False
+*:shared=True
 
 [conf]
 tools.build:compiler_executables={ "c": "{{ v.get_exe(v.VS2026Bin, 'cl.exe') }}", "cpp": "{{ v.get_exe(v.VS2026Bin, 'cl.exe') }}" }
