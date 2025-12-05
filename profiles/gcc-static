@@ -16,6 +16,7 @@ compiler.cstd=23
 *:shared=False
 
 [conf]
+tools.build:compiler_executables={ "c": "gcc", "cpp": "g++" }
 tools.build:cxxflags=[ "-march=native", "-mtune=native", "-static" ]
 tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]
 tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
