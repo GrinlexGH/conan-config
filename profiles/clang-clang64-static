@@ -23,7 +23,6 @@ tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]
 tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
 
 [buildenv]
-CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo
 CMT_MINGW_PATH={{ v.MSYS2Clang64Bin }}
 MSYSTEM=CLANG64
 MSYSTEM_PREFIX=/clang64
