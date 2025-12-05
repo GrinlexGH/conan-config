@@ -44,6 +44,3 @@ tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]
 
 {{ UseConfVS2022("boost") }}
 {{ UseConfVS2022("zlib") }}
-
-[buildenv]
-CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo
