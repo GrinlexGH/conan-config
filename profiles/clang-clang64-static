@@ -1,0 +1,31 @@
+# clang-clang64-static
+{% set Arch = "x86_64" %}
+{% import "profile_vars" as v with context %}
+
+[settings]
+os=Windows
+arch={{ Arch }}
+build_type=Release
+
+compiler=clang
+compiler.version=21
+compiler.libcxx=libc++
+compiler.cppstd=23
+compiler.cstd=23
+
+[options]
+*:shared=False
+
+[conf]
+tools.build:compiler_executables={ "c": "{{ v.get_exe(v.MSYS2Clang64Bin, 'clang.exe') }}", "cpp": "{{ v.get_exe(v.MSYS2Clang64Bin, 'clang++.exe') }}" }
+tools.build:cxxflags=[ "-march=native", "-mtune=native", "-static" ]
+tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]
+tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
+
+[buildenv]
+CONFIGURATION_TYPES=Debug;Release;RelWithDebInfo
+CMT_MINGW_PATH={{ v.MSYS2Clang64Bin }}
+MSYSTEM=CLANG64
+MSYSTEM_PREFIX=/clang64
+PATH=+(path){{ v.MSYS2Clang64Bin }}
+PATH=+(path){{ v.MSYS2UsrBin }}

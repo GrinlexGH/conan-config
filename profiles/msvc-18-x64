@@ -1,0 +1,21 @@
+# msvc-18-x64
+{% set Arch = "x86_64" %}
+{% import "profile_vars" as v with context %}
+
+[settings]
+os=Windows
+arch={{ Arch }}
+build_type=Release
+
+compiler=msvc
+compiler.cppstd=23
+compiler.runtime=dynamic
+compiler.runtime_type=Release
+compiler.version=195
+
+[options]
+*:shared=False
+
+[conf]
+tools.build:compiler_executables={ "c": "{{ v.get_exe(v.VS2026Bin, 'cl.exe') }}", "cpp": "{{ v.get_exe(v.VS2026Bin, 'cl.exe') }}" }
+tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026
