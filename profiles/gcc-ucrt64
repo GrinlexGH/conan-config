@@ -15,9 +15,6 @@ compiler.exception=seh
 compiler.cppstd=23
 compiler.cstd=23
 
-[options]
-*:shared=True
-
 [conf]
 tools.build:compiler_executables={ "c": "{{ v.get_exe(v.MSYS2Ucrt64Bin, 'gcc.exe') }}", "cpp": "{{ v.get_exe(v.MSYS2Ucrt64Bin, 'g++.exe') }}" }
 tools.build:cxxflags=[ "-march=native", "-mtune=native" ]
