@@ -11,6 +11,7 @@ compiler.cppstd=23
 compiler.cstd=23
 
 [conf]
+tools.build:compiler_executables={ "c": "clang", "cpp": "clang++" }
 tools.build:cxxflags=[ "-march=native", "-mtune=native" ]
 tools.build:cflags=[ "-march=native", "-mtune=native" ]
 tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
