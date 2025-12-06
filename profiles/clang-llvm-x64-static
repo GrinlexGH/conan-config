@@ -34,7 +34,7 @@ compiler.runtime_version=v144
 {{ UseSettingsVS2022("zlib") }}
 
 [options]
-*:shared=True
+*:shared=False
 
 [conf]
 tools.build:compiler_executables={ "c": "{{ v.get_exe(v.LLVMBin, 'clang.exe') }}", "cpp": "{{ v.get_exe(v.LLVMClangBin, 'clang++.exe') }}" }
