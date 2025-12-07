@@ -1,5 +1,5 @@
-# msvc-18-x64-static
-include(msvc-18-x64)
+# msvc-18-static
+include(msvc-18)
 
 [settings]
 compiler.runtime=static

@@ -1,4 +1,4 @@
-# msvc-18-x64
+# msvc-18
 {% set Arch = "x86_64" %}
 {% import "profile_vars" as v with context %}
 
