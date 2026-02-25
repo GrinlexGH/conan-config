@@ -1,9 +1,0 @@
-# gcc-ucrt64-static
-include(gcc-ucrt64)
-
-[options]
-*:shared=False
-
-[conf]
-tools.build:cxxflags=[ "-march=native", "-mtune=native", "-static" ]
-tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]

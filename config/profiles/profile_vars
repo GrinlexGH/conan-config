@@ -6,27 +6,7 @@
     {%- endif -%}
 {% endmacro %}
 
-{% if Arch == "x86_64" %}
-    {% set ArchXBits = "x64" %}
-{% elif Arch == "x86" %}
-    {% set ArchXBits = "x32" %}
-{% else %}
-    {% set ArchXBits = "NotSupported" %}
-{% endif %}
-
-{% set VS2026Bin = os.getenv("CONAN_VS2026_BIN_DIR") %}
-{% if not VS2026Bin and os.getenv("VCINSTALLDIR") %}
-    {% set VS2026Bin = os.getenv("VCINSTALLDIR") + "bin/Hostx64/" + ArchXBits %}
-{% endif %}
-
-{% set VS2022Bin = os.getenv("CONAN_VS2022_BIN_DIR") %}
-{% if not VS2022Bin and os.getenv("VCINSTALLDIR") %}
-    {% set VS2022Bin = os.getenv("VCINSTALLDIR") + "bin/Hostx64/" + ArchXBits %}
-{% endif %}
-
-{% set LLVMBin = os.getenv("CONAN_LLVM_BIN_DIR", "C:/Program Files/LLVM/bin") %}
-
-{% set MSYS2_Root = os.getenv("CONAN_MSYS2_ROOT", "C:/msys64") %}
+{% set MSYS2_Root = os.getenv("SKYLABS_CONAN_MSYS2_ROOT", "C:/msys64") %}
 {% set MSYS2UsrBin = MSYS2_Root + "/usr/bin" %}
 {% set MSYS2Ucrt64Bin = MSYS2_Root + "/ucrt64/bin" %}
 {% set MSYS2Mingw32Bin = MSYS2_Root + "/mingw32/bin" %}

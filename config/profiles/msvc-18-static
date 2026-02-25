@@ -1,8 +1,0 @@
-# msvc-18-static
-include(msvc-18)
-
-[settings]
-compiler.runtime=static
-
-[options]
-*:shared=False

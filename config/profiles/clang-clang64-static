@@ -1,9 +1,0 @@
-# clang-clang64-static
-include(clang-clang64)
-
-[options]
-*:shared=False
-
-[conf]
-tools.build:cxxflags=[ "-march=native", "-mtune=native", "-static" ]
-tools.build:cflags=[ "-march=native", "-mtune=native", "-static" ]
