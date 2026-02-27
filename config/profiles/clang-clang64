@@ -17,6 +17,7 @@ tools.build:compiler_executables={ "c": "{{ v.get_exe(v.MSYS2Clang64Bin, 'clang.
 tools.build:cxxflags=[ "-march=native", "-mtune=native" ]
 tools.build:cflags=[ "-march=native", "-mtune=native" ]
 tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
+tools.cmake.cmaketoolchain:user_toolchain+={{ os.path.join(profile_dir, "base_toolchain.cmake") }}
 
 [buildenv]
 CMT_MINGW_PATH={{ v.MSYS2Clang64Bin }}

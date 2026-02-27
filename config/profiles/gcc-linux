@@ -15,3 +15,4 @@ tools.build:compiler_executables={ "c": "gcc", "cpp": "g++" }
 tools.build:cxxflags=[ "-march=native", "-mtune=native" ]
 tools.build:cflags=[ "-march=native", "-mtune=native" ]
 tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
+tools.cmake.cmaketoolchain:user_toolchain+={{ os.path.join(profile_dir, "base_toolchain.cmake") }}
