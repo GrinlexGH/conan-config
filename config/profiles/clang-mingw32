@@ -17,7 +17,6 @@ tools.build:compiler_executables={ "c": "{{ v.get_exe(v.MSYS2Mingw32Bin, 'clang.
 tools.build:cxxflags=[ "-march=native", "-mtune=native" ]
 tools.build:cflags=[ "-march=native", "-mtune=native" ]
 tools.cmake.cmaketoolchain:generator=Ninja
-&:tools.cmake.cmaketoolchain:generator=Ninja Multi-Config
 
 [buildenv]
 CMT_MINGW_PATH={{ v.MSYS2Mingw32Bin }}
