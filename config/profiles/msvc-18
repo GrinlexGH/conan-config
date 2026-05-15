@@ -13,5 +13,6 @@ compiler.runtime_type=Release
 compiler.cppstd=23
 
 [conf]
+tools.microsoft.msbuild:vs_version=18
 tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026
 tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_POLICY_DEFAULT_CMP0141": "NEW", "MSVC_DEBUG_INFORMATION_FORMAT": "Embedded" }
