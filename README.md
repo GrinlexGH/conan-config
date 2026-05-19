@@ -1,5 +1,5 @@
 Environment variables:
 
-| Name | Default |
-|------|---------|
+| Name                       | Default     |
+|----------------------------|-------------|
 | `SKYLABS_CONAN_MSYS2_ROOT` | `C:/msys64` |
