@@ -8,7 +8,6 @@ compiler=msvc
 compiler.version=195
 compiler.runtime=dynamic
 compiler.runtime_type=Release
-compiler.cstd=null
 
 [conf]
 tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026
