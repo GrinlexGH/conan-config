@@ -1,24 +1,11 @@
-# gcc-mingw32
-{% import "profile_vars" as v with context %}
+# clang-mingw32
+include(mingw)
+{% import "mingw" as m with context %}
 
 [settings]
-os=Windows
 arch=x86
-build_type=Release
-
 compiler=clang
 compiler.version=21
 compiler.libcxx=libc++
-compiler.cppstd=23
-compiler.cstd=23
 
-[conf]
-tools.build:compiler_executables={ "c": "{{ v.get_exe(v.MSYS2Mingw32Bin, 'clang.exe') }}", "cpp": "{{ v.get_exe(v.MSYS2Mingw32Bin, 'clang++.exe') }}" }
-tools.cmake.cmaketoolchain:generator=Ninja
-
-[buildenv]
-CMT_MINGW_PATH={{ v.MSYS2Mingw32Bin }}
-MSYSTEM=MINGW32
-MSYSTEM_PREFIX=/mingw32
-PATH=+(path){{ v.MSYS2Mingw32Bin }}
-PATH=+(path){{ v.MSYS2UsrBin }}
+{{ m.msys2_setup("MINGW32", "clang") }}

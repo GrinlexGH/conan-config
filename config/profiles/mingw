@@ -1,0 +1,25 @@
+# mingw
+{% set MSYS2_Root = os.getenv("SKYLABS_CONAN_MSYS2_ROOT", "C:/msys64") | replace("\\", "/") %}
+{% set MSYS2UsrBin = MSYS2_Root + "/usr/bin" %}
+
+{% macro msys2_setup(env_name, compiler_type) %}
+{% set env_lower = env_name | lower %}
+{% set bin_dir = MSYS2_Root + "/" + env_lower + "/bin" %}
+{% set c_exe = "clang.exe" if compiler_type == "clang" else "gcc.exe" %}
+{% set cpp_exe = "clang++.exe" if compiler_type == "clang" else "g++.exe" %}
+
+[conf]
+tools.build:compiler_executables={ "c": "{{ bin_dir }}/{{ c_exe }}", "cpp": "{{ bin_dir }}/{{ cpp_exe }}" }
+
+[buildenv]
+CMT_MINGW_PATH={{ bin_dir }}
+MSYSTEM={{ env_name }}
+MSYSTEM_PREFIX=/{{ env_lower }}
+PATH=+(path){{ bin_dir }}
+PATH=+(path){{ MSYS2UsrBin }}
+{% endmacro %}
+
+include(common)
+
+[settings]
+os=Windows

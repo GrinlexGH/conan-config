@@ -1,18 +1,18 @@
 # msvc-18
-{% import "profile_vars" as v with context %}
+include(common)
 
 [settings]
 os=Windows
 arch=x86_64
-build_type=Release
-
 compiler=msvc
 compiler.version=195
 compiler.runtime=dynamic
 compiler.runtime_type=Release
-compiler.cppstd=23
+compiler.cstd=null
 
 [conf]
-tools.microsoft.msbuild:vs_version=18
 tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026
 tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_POLICY_DEFAULT_CMP0141": "NEW", "MSVC_DEBUG_INFORMATION_FORMAT": "Embedded" }
+
+[tool_requires]
+cmake/[>=4.2]

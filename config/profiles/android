@@ -1,16 +1,10 @@
 # android
-{% import "profile_vars" as v with context %}
+include(common)
 
 [settings]
 os=Android
-os.api_level=27
+os.api_level=30
 arch=armv8
-
 compiler=clang
 compiler.version=21
 compiler.libcxx=c++_static
-compiler.cppstd=23
-compiler.cstd=23
-
-[conf]
-tools.cmake.cmaketoolchain:generator=Ninja
