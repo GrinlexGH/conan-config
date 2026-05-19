@@ -1,11 +1,15 @@
 # clang-clang64
-include(mingw)
 {% import "mingw" as m with context %}
 
 [settings]
+os=Windows
 arch=x86_64
+
+build_type=Release
 compiler=clang
 compiler.version=21
 compiler.libcxx=libc++
+compiler.cppstd=23
+compiler.cstd=23
 
 {{ m.msys2_setup("CLANG64", "clang") }}

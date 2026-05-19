@@ -1,9 +1,0 @@
-# linux
-include(common)
-
-[settings]
-os=Linux
-arch=x86_64
-
-[conf]
-tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_INSTALL_RPATH": "$ORIGIN" }

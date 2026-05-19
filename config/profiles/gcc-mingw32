@@ -1,13 +1,17 @@
 # gcc-mingw32
-include(mingw)
 {% import "mingw" as m with context %}
 
 [settings]
-arch=x86
+os=Windows
+arch=x86_64
+
+build_type=Release
 compiler=gcc
 compiler.version=15.2
 compiler.libcxx=libstdc++11
 compiler.threads=mcf
 compiler.exception=seh
+compiler.cppstd=23
+compiler.cstd=23
 
 {{ m.msys2_setup("MINGW32", "gcc") }}

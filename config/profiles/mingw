@@ -10,6 +10,7 @@
 
 [conf]
 tools.build:compiler_executables={ "c": "{{ bin_dir }}/{{ c_exe }}", "cpp": "{{ bin_dir }}/{{ cpp_exe }}" }
+tools.cmake.cmaketoolchain:generator=Ninja
 
 [buildenv]
 CMT_MINGW_PATH={{ bin_dir }}
@@ -18,8 +19,3 @@ MSYSTEM_PREFIX=/{{ env_lower }}
 PATH=+(path){{ bin_dir }}
 PATH=+(path){{ MSYS2UsrBin }}
 {% endmacro %}
-
-include(common)
-
-[settings]
-os=Windows
