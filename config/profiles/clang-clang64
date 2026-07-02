@@ -13,3 +13,4 @@ compiler.cppstd=23
 compiler.cstd=23
 
 {{ m.msys2_setup("CLANG64", "clang") }}
+tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_LINKER_TYPE": "LLD" }
