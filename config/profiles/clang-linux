@@ -12,5 +12,5 @@ compiler.cstd=23
 
 [conf]
 tools.build:compiler_executables={ "c": "clang", "cpp": "clang++" }
-tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_INSTALL_RPATH": "$ORIGIN" }
+tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_INSTALL_RPATH": "$ORIGIN", "CMAKE_LINKER_TYPE": "LLD" }
 tools.cmake.cmaketoolchain:generator=Ninja
