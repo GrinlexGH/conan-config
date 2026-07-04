@@ -12,5 +12,9 @@ compiler.libcxx=libc++
 compiler.cppstd=23
 compiler.cstd=23
 
-{{ m.msys2_setup("CLANG64", "clang") }}
+[conf]
+{{ m.conf("CLANG64", "clang.exe", "clang++.exe") }}
 tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_LINKER_TYPE": "LLD" }
+
+[buildenv]
+{{ m.buildenv("CLANG64") }}

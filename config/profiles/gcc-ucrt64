@@ -14,4 +14,8 @@ compiler.exception=seh
 compiler.cppstd=23
 compiler.cstd=23
 
-{{ m.msys2_setup("UCRT64", "gcc") }}
+[conf]
+{{ m.conf("UCRT64", "gcc.exe", "g++.exe") }}
+
+[buildenv]
+{{ m.buildenv("UCRT64") }}

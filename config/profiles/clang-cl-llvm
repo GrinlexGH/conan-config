@@ -1,0 +1,22 @@
+{% set llvm_root = os.getenv("SKYLABS_CONAN_LLVM_ROOT", "C:/Program Files/LLVM") | replace("\\", "/") %}
+
+[settings]
+os=Windows
+arch=x86_64
+
+build_type=Release
+compiler=clang
+compiler.version=22
+compiler.runtime=dynamic
+compiler.runtime_type=Release
+compiler.runtime_version=v145
+compiler.cppstd=23
+compiler.cstd=23
+
+[conf]
+{% set bin_dir = llvm_root ~ "/bin" %}
+tools.build:compiler_executables={ "c": "{{ bin_dir }}/clang.exe", "cpp": "{{ bin_dir }}/clang++.exe" }
+tools.cmake.cmaketoolchain:generator=Ninja
+
+[buildenv]
+PATH=+(path){{ llvm_root ~ "/bin" }}
