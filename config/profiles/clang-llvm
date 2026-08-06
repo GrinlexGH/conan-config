@@ -17,6 +17,7 @@ compiler.cstd=23
 {% set bin_dir = llvm_root ~ "/bin" %}
 tools.build:compiler_executables={ "c": "{{ bin_dir }}/clang.exe", "cpp": "{{ bin_dir }}/clang++.exe" }
 tools.cmake.cmaketoolchain:generator=Ninja
+&:tools.env.virtualenv:powershell=pwsh
 
 [buildenv]
 PATH=+(path){{ llvm_root ~ "/bin" }}

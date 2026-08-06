@@ -16,6 +16,7 @@ compiler.cstd=23
 
 [conf]
 {{ m.conf("UCRT64", "gcc.exe", "g++.exe") }}
+&:tools.env.virtualenv:powershell=pwsh
 
 [buildenv]
 {{ m.buildenv("UCRT64") }}

@@ -15,4 +15,4 @@ compiler.cstd=23
 [conf]
 tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026
 tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_POLICY_DEFAULT_CMP0141": "NEW", "MSVC_DEBUG_INFORMATION_FORMAT": "Embedded" }
-
+&:tools.env.virtualenv:powershell=pwsh

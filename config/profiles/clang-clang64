@@ -15,6 +15,7 @@ compiler.cstd=23
 [conf]
 {{ m.conf("CLANG64", "clang.exe", "clang++.exe") }}
 tools.cmake.cmaketoolchain:extra_variables={ "CMAKE_LINKER_TYPE": "LLD" }
+&:tools.env.virtualenv:powershell=pwsh
 
 [buildenv]
 {{ m.buildenv("CLANG64") }}
