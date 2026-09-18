@@ -10,7 +10,7 @@ compiler.runtime=dynamic
 compiler.runtime_type=Release
 compiler.runtime_version=v145
 compiler.cppstd=23
-compiler.cstd=23
+compiler.cstd=17
 
 [conf]
 tools.cmake.cmaketoolchain:generator=Visual Studio 18 2026

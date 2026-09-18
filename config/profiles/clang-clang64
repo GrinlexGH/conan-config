@@ -10,7 +10,7 @@ compiler=clang
 compiler.version=22
 compiler.libcxx=libc++
 compiler.cppstd=23
-compiler.cstd=23
+compiler.cstd=17
 
 [conf]
 {{ m.conf("CLANG64", "clang.exe", "clang++.exe") }}

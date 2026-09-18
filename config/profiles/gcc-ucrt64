@@ -12,7 +12,7 @@ compiler.libcxx=libstdc++11
 compiler.threads=mcf
 compiler.exception=seh
 compiler.cppstd=23
-compiler.cstd=23
+compiler.cstd=17
 
 [conf]
 {{ m.conf("UCRT64", "gcc.exe", "g++.exe") }}
